@@ -1,0 +1,1019 @@
+/*
+#include<iostream>
+int a, b, c, d;
+using namespace std;
+class Point {
+public:
+	Point(int xx = 0, int yy = 0)
+	{
+		x = xx;
+		y = yy;
+	}
+	int x, y;
+};
+class Length {
+public:
+	void length1();
+	void putlength();
+private:
+	Point p1;
+	Point p2;
+	int length;
+};
+void Length::length1() {
+	length = (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y);
+	length = sqrt(length);
+}
+void Length::putlength() {
+	cout << length;
+}
+int main() {
+	cin >>a>>b>>c>>d;
+	Length changdu;
+	changdu.length1();
+	changdu.putlength();
+}
+*/
+/*
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+class Point {
+public:
+	Point(int x=0,int y=0):x(x),y(y){}
+	int getX(){ return x; }
+	int getY(){ return y; }
+	friend float dist(const Point& p1, const Point& p2);
+private:
+	int x, y;
+};
+float dist(const Point& p1, const Point& p2) {
+	double x = p1.x - p2.x;
+	double y = p1.y - p2.y;
+	return static_cast<float>(sqrt(x * x + y * y));//static_cast<> 为显式类型转换
+	//将main()中myp(1,1)改为myp(2,1),输出为小数，<>里改为int,则输出为整数
+}
+
+int main() {
+	const Point myp(1, 1), myp2(4, 5);
+	cout << "The distance is:";
+	cout << dist(myp, myp2) << endl;
+	return 0;
+}*/
+/*
+class Account {//账户类
+private:
+	std::string id;//账号
+	double balance;//余额
+	static double total;//所有账户的总金额
+protected:
+	Account(const Date& date, const std::string &id);
+	void record(const Date& date, double amount, const std::string& id);
+	void errror(const std::string& msg)const;
+public:
+	const std::string& getId()const { return id; }
+	double getBlance()const { return balance; }
+	static double getTotal() { return total;}
+	void show()const;
+};
+
+class CreditAccount :public Account {
+private:
+	Accmulator acc;
+	double credit;
+	double rate;
+	double fee;
+	double getDebt()const;
+public:
+	//构造函数
+	CreditAccount(const Date& date, const std::string& id, double credit, double rate, double fee);
+	double getCredit()const;
+	double getRate()const;
+	double getFee()const;
+	double getAvailabeCredit();
+	void deposit(const Date& date, double amount, const std::string& desc);
+	void settle(const Date& date);
+	void show()const;
+};
+*/
+/*
+#include<iostream>
+using namespace std;
+class parent {
+public:
+	int getY() {
+		return y;
+	}
+	int x=1;
+private:
+	int y=2;
+};
+class child :private parent {
+public:
+	int a=3;
+private:
+	int b=4;
+};
+
+int main() {
+	child c1;
+	parent p1;
+	cout << p1.getY() << endl;
+	//cout << c1.getY() << endl;
+	return 0;
+}
+*/
+/*
+#include<iostream>
+//#include<cmath>
+#include"标头.h"
+using namespace std;
+/*class Point {
+public:
+	void initP(float xx, float yy);
+	void Move(float xOff, float yOff) {
+		cout << x <<" "<< y;
+	}
+	float getX() {
+		return x;
+	}
+	float GetY() {
+		return y;
+	}
+private:
+	float x, y;
+};
+*/
+/*
+class Rectangle :public Point {
+public:
+	void initR(float x, float y, float w, float h) {
+		initP(x, y);
+		this->W=w;
+		this->H=h;
+	}
+	void move(float xOff, float yOff) {
+		Point::Move(xOff, yOff);
+	}
+	float GetH() {
+		return H;
+	}
+	float GetW() {
+		return W;
+	}
+private:
+	float W, H;
+};
+
+int main() {
+	Rectangle r1;
+	r1.initR(2, 3, 20, 10);
+	r1.Move(3, 2);
+	cout << r1.getX() <<" " << r1.GetY()<<" " << r1.GetW()<<" " << r1.GetH();
+	return 0;
+}
+*/
+/*
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+	Base() {
+		cout << "基类构造函数" << endl;
+	}
+
+	~Base() {
+		cout << "基类析构函数" << endl;
+	}
+};
+
+class Derived : public Base {
+public:
+	Derived() {
+		cout << "派生类构造函数" << endl;
+	}
+
+	~Derived() {
+		cout << "派生类析构函数" << endl;
+	}
+};
+
+int main()
+{
+	Derived s;
+}
+*/
+/*
+7-5
+#include<iostream>
+#include"7-5.h";
+
+int main() {
+	Rectangle r1(1, 2);
+	r1.getArea();
+	cout << endl;
+	Circle c1(1);
+	c1.getArea();
+	return 0;
+}
+*/
+
+/*
+#include<iostream>
+using namespace std;
+
+void swap1(int& a, int& b)//修改行
+{
+	int t;
+	t = a;
+	a = b;
+	b = t;
+}
+
+int main()
+{
+	int a, b;
+	cin >> a >> b;
+	swap1(a, b);
+	cout << a << b;
+	return 0;
+}
+*/
+/*
+#include<iostream>
+using namespace std;
+void swap(int *a,int *b) {
+	cout << "形参引用a的地址 = " << &a << endl;
+	int trans;
+	trans = *a;
+	*a = *b;
+	*b = trans;
+}
+
+int main() {
+	int a = 10;
+	int b = 20;
+	cout << "实参a的地址 = " << &a << endl;
+	swap(&a, &b);
+	cout << "a的值：" << a;
+	cout << "b的值：" << b;
+	return 0;
+}
+*/
+/*
+#include<iostream>
+using namespace std;
+
+int Double(int); 
+long Double(long); 
+float Double(float); 
+double Double(double);
+
+int main() {
+	int myInt = 6500; 
+	long myLong = 65000; 
+	float myFloat = 6.5F;
+	double myDouble = 6.5e20;
+	int doubledInt;
+	long doubledLong;
+	float doubledFloat;
+	double doubledDouble;
+	cout << "myInt: " << myInt << "\n";
+	cout << "myLong: " << myLong << "\n";
+	cout << "myFloat: " << myFloat << "\n";
+	cout << "myDouble: " << myDouble << "\n";
+	doubledInt = Double(myInt);
+	doubledLong = Double(myLong);
+	doubledFloat = Double(myFloat);
+	doubledDouble = Double(myDouble);
+	cout << "doubledInt: " << doubledInt << "\n";
+	cout << "doubledLong: " << doubledLong << "\n";
+	cout << "doubledFloat: " << doubledFloat << "\n";
+	cout << "doubledDouble: " << doubledDouble << "\n";
+	return 0;
+}
+int Double(int original) {
+	cout << "In Double(int)\n"; return 2 * original;
+}
+long Double(long original) {
+	cout << "In Double(long)\n";
+	return 2 * original;
+}
+float Double(float original) {
+	cout << "In Double(float)\n"; return 2 * original;
+}
+double Double(double original) {
+	cout << "In Double(double)\n"; return 2 * original;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+
+class chongZ
+{
+public:
+	void print(int i) {
+		cout << "重载1" << i << endl;
+	}
+
+	void print(double  j) {
+		cout << "重载2 " << j << endl;
+	}
+
+	void print(char c[]) {
+		cout << "重载3 " << c << endl;
+	}
+};
+
+int main()
+{
+	chongZ CZ;
+	CZ.print(5);
+	CZ.print(123.456);
+	char c[] = "CHONGZZAI";
+	CZ.print(c);
+	return 0;
+}
+*/
+
+/*
+#include<iostream>
+#include<string>
+using namespace std;
+class person {  //person基类
+private:
+	string name;
+protected:
+	int age;
+public:
+	void printname();
+	void setname(string);
+	person() {
+		name = "基类test";
+		cout << "name=" << name << " 基类构造函数执行" << endl;
+	}
+	person(string name1) {
+		name = name1;
+		cout<<"name="<<name<<" 基类构造函数执行"<<endl;
+	}
+	~person() {
+		cout<<"name="<<name<<"  基类person析构函数执行"<<endl;
+	}
+};
+void person::printname() { cout << "基类name=" << name << endl; }
+void person::setname(string name1) { name = name1; }
+
+class student :public person {//student 继承person 是派生类
+private:
+	int no;
+	float score;
+	person p1;
+protected:
+	string sex;
+public:
+	void output();
+	student():person("mm"),p1("4")
+	{
+		no = 1;
+		score = 80.0;
+		age = 20;
+		cout << "no=" << no << " 派生类构造函数执行" << endl;
+	}
+	~student() {  	cout<<"no="<<no<<"  "<<"派生类析构函数"<<endl; 
+	}
+	};
+	void student::output() {
+		printname();
+		cout << "age=" << age << endl;
+	}
+	void main() {
+		student st;  //说明在创建st对象时，调用了哪个构造函数
+					 //是否调用了基类构造函数？如果是，调用的是哪个基类的构造函数
+		cout << "st----" << endl;
+		st.printname();
+	}
+	*/
+/*
+#include<iostream>
+using namespace std;
+
+class Teacher {
+private:
+	int num;
+	string name;
+	char sex;
+public:
+	Teacher(int xx=0, string yy=0, char zz=0) {
+		this->num = xx;
+		this->name = yy;
+		this->sex = zz;
+	}
+	void Input(int xx,string yy,char zz) {
+		num = xx;
+		name = yy;
+		sex= zz;
+	}
+	void Output() {
+		cout << "编号是：" << num<<endl;
+		cout << "姓名是" << name<<endl;
+		cout << "性别是" << sex << endl;
+	}
+};
+
+class Professor :public Teacher{
+private:
+	int rank;
+public:
+	Professor(int rank,int xx,string yy,char zz):Teacher(xx,yy,zz){
+		this->rank = rank;
+	}
+	void Pinput(int rank,int xx,string yy,char zz){
+		this->rank = rank;
+		Input(xx, yy, zz);
+	}
+	void Poutput() {
+		cout << "等级为"<<rank << endl;
+		Output();
+	}
+};
+
+int main() {
+	Professor p1(1, 001, "龙傲天", '男');
+	p1.Poutput();
+}
+*/
+/*
+#include<iostream>
+#include<string>
+using namespace std;
+class A {
+private:
+	int a;
+public:
+	A(int x) { a = x; }
+	void setA(int x) { a = x; }
+	void showA() { cout << "a=" << a << endl; }
+};
+class B {
+private:
+	int b;
+public:
+	B(int x) { b = x; }
+	void setB(int x) { b = x; }
+	void showB() { cout << "b=" << b << endl; }
+};
+class C :public A, private B   //公有继承A，私有继承B
+{
+private:
+	int c;
+public:
+	C(int a, int b, int c1) :A(a), B(b) //派生类构造函数初始化
+	{
+		c = c1;
+	}
+	void setC(int x, int y) {
+		c = x;
+		setB(y);  //通过B类的成员函数setB()为B类的私有成员b赋值
+	}
+	void showC() { cout << "c=" << c << endl; }
+	void showABC() {
+		showA();    //能否改成  cout<<"a="<<a<<endl;
+		showB();    //能否改成  cout<<"b="<<b<<endl;   
+		cout << "c=" << c << endl;
+	}
+};
+void main() {
+	C obj(1, 2, 3);
+	cout << "显示a,b,c" << endl;
+	obj.showABC();
+}
+*/
+/*
+#include<iostream>
+using namespace std;
+
+#define PI 3.1415927
+
+class Point {
+public:
+	Point(int x = 0,int y = 0) {
+		this->x = x;
+		this->y = y;
+	}
+	void setpoint(int x,int y) {
+		this->x = x;
+		this->y = y;
+	}
+	void showpoint() {
+		cout << "横坐标是" << x<<endl;
+		cout << "纵坐标是" << y << endl;
+	}
+	int getx() {
+		return x;
+	}
+	int gety() {
+		return y;
+	}
+private:
+	int x, y;
+};
+
+class Radius {
+public:
+	Radius(int r) {
+		this->r = r;
+	}
+	int getr() {
+		return r;
+	}
+	void setr(int r) {
+		this->r = r;
+	}
+private:
+	int r;
+};
+
+class Circle :public Point, public Radius {
+public:
+	Circle(int xx, int yy, int zz) :Point(xx, yy), Radius(zz) {}
+	void showcircle() {
+		showpoint();
+		cout << "圆的面积是" << area() << endl;
+	}
+	double area() {
+		area1 = getr();
+		area1 = PI * area1 * area1;
+		return area1;
+	}
+private:
+	double area1;
+};
+
+int main() {
+	Circle c1(1,2,3);
+	c1.area();
+	c1.showcircle();
+}
+*/
+/*
+#include <string.h>
+#include <stdio.h>
+#define   N   81
+void fun(char* s) {
+	//写入你的代码
+	char trans;
+	for (int i = 0; i < 40; i++) {
+		trans = s[i];
+		s[i] = s[N - i];
+	}
+}
+void  main(void) {
+	char   a[N];
+	printf("Enter  a  string :  "); gets(a);
+	printf("The original string is :  "); puts(a);
+	fun(a);
+	printf("\n");
+	printf("The string after modified :  ");
+	puts(a);
+}
+*/
+
+/*
+#include<iostream>
+#include<string>
+using namespace std;
+class person {//person基类
+private:
+	string name;
+protected:
+	int age;
+public:
+	void printname();
+	void setvalue_p(string name1, int age1) { name = name1;  age = age1; }
+	void print() { cout << "name=" << name << " age=" << age << endl; }
+};
+class student :private person { //student 派生类
+private:
+	int no;
+	float score;
+public:
+	void setvalue(string name1, int age1, int no1, float score1) {
+		setvalue_p(name1,age1);
+		no = no1;
+		score = score1;
+	}
+	void output() {
+		print();
+		cout << "no=" << no << " score=" << score << endl;
+	}
+};
+void main() {
+	student st1;
+	st1.setvalue("张三", 20, 1011, 93.1);
+	cout << "----" << endl;
+	st1.output();
+	cout << "----" << endl;
+	//st1.print();
+}
+*/
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+class Student {
+public:
+	void get_value() {  //添加代码 实现  num，name和sex的输入
+		cin >> num >> name >> sex;
+	}
+		void display() {
+			cout << "num: " << num << endl;
+			cout << "name: " << name << endl;
+			cout << "sex: " << sex << endl;
+		}
+private:
+	int num;
+	string name;
+	char sex;
+	};
+	class Student1:public Student   //增加公有继承
+	{
+	public:
+		void get_value_1() {
+			//添加代码。实现基类继承的成员的输入以及本类新增的数据成员的输入
+			get_value();
+			cin >> age >> addr;
+		}
+		void display_1() {
+			//添加代码。实现基类继承成员和新增age，addr的输出
+			display();
+			cout << "age:" << age << endl;
+			cout << "addr:" << addr << endl;
+		}
+	private:
+		int age;
+		string addr;
+	};
+	void main() {
+		Student1 stud1;
+		stud1.get_value();
+		stud1.get_value_1();
+		stud1.display();
+		stud1.display_1();
+	}
+	*/
+/*
+#include <iostream>
+#include <cstring>
+	using namespace std;
+	 class Base {
+		 // ERROR  ********found********
+	 public:
+		 char* msg;
+
+		 Base() { msg = NULL; }
+		 void setvalue(const char* str) {
+			 // ERROR  ********found********
+			 msg = new char[strlen(str)];
+			 strcpy(msg, str);
+			 cout << "Base:" << msg << endl;
+		 }
+		 // ERROR  ********found********
+		 ~Base() {
+			 if (msg != NULL)
+				 delete msg;
+		 }
+	 };
+	 class Derived :public Base {
+	 public:
+		 void Show() { cout << "Derived:" << msg << endl; }
+	 };
+	 int main() {
+		 Derived obj;
+		 obj.setvalue("Good Luck!");
+		 obj.Show();
+		 return 0;
+	 }
+#include <iostream>
+#include <cstring>
+	using namespace std;
+	 class Base {
+		 // ERROR  ********found********
+	 public:
+		 char* msg;
+
+		 Base() { msg = NULL; }
+		 void setvalue(const char* str) {
+			 // ERROR  ********found********
+			 msg = new char[strlen(str)];
+			 strcpy(msg, str);
+			 cout << "Base:" << msg << endl;
+		 }
+		 // ERROR  ********found********
+		 ~Base() {
+			 if (msg != NULL)
+				 delete msg;
+		 }
+	 };
+	 class Derived :public Base {
+	 public:
+		 void Show() { cout << "Derived:" << msg << endl; }
+	 };
+	 int main() {
+		 Derived obj;
+		 obj.setvalue("Good Luck!");
+		 obj.Show();
+		 return 0;
+	 }
+	*/
+/*
+#include<iostream>
+using namespace std;
+
+class Person {
+private:
+	string name;
+public:
+	void PrintName() {
+		cout << "姓名是" << name<<endl;
+	}
+	Person(string name1){
+		name = name1;
+	}
+};
+class Worker :public Person {
+private:
+	string number;
+	string sex;
+	int age;
+	string add;
+public:
+	Worker(string name1, string number1, string sex1, int age1, string add1) :Person(name1) {
+		number = number1;
+		sex = sex1;
+		age = age1;
+		add = add1;
+	}
+	void printinfor() {
+		PrintName();
+		cout << "工号是" << number << endl;
+		cout << "性别是" << sex << endl;
+		cout << "年龄是" << age << endl;
+		cout << "家庭住址是" << add << endl;
+	}
+};
+
+int main() {
+	Worker w1("萧炎","10086","男",1,"珈马帝国乌坦城");
+	w1.printinfor();
+	return 0;
+
+}
+*/
+
+/*
+#include<iostream>
+using namespace std;
+
+class Teacher {
+private:
+	int num;
+	string name;
+	char sex;
+public:
+	Teacher(int xx = 0, string yy = 0, char zz = 0) {
+		this->num = xx;
+		this->name = yy;
+		this->sex = zz;
+	}
+	void Input(int xx, string yy, char zz) {
+		num = xx;
+		name = yy;
+		sex = zz;
+	}
+	void Output() {
+		cout << "编号是：" << num << endl;
+		cout << "姓名是" << name << endl;
+		cout << "性别是" << sex << endl;
+	}
+};
+
+class Professor :public Teacher {
+private:
+	int rank;
+public:
+	Professor(int rank, int xx, string yy, char zz) :Teacher(xx, yy, zz) {
+		this->rank = rank;
+	}
+	void Pinput(int rank, int xx, string yy, char zz) {
+		this->rank = rank;
+		Input(xx, yy, zz);
+	}
+	void Poutput() {
+		cout << "等级为" << rank << endl;
+		Output();
+	}
+};
+
+int main() {
+	Professor p1(1, 001, "龙傲天", '男');
+	p1.Poutput();
+}
+*/
+
+/*
+#include<iostream>
+#include<string>
+using namespace std;
+class A {
+private:
+	int a;
+public:
+	A(int x) { a = x; }
+	void setA(int x) { a = x; }
+	void show() { cout << "基类A=" << a << endl; }
+};
+class C :public A {  //公有继承 A
+private:
+	int c;
+public:
+	C(int a, int b, int c1) :A(a) { c = c1; }  //派生类构造函数
+	void setC(int x, int y) { c = x; }
+	void showC() { cout << "c=" << c << endl; }
+	void show() {
+		A::show();
+		cout << "派生类C=" << c << endl;
+	}
+
+};
+void main() {
+	A  ta(12);
+	C  tc(1, 2, 3);
+	//ta.show();
+	tc.show();
+}
+*/
+/*
+#include<iostream>
+using namespace std;
+class complex {
+	double real, imag;
+public:
+	complex(double r = 0, double i = 0) { real = r; imag = i; }
+	complex operator + (complex&);  //运算符重载的成员函数原型
+	//运算符结果类型 operator @(参数表列);  其中，@表示运算符
+	void print();
+};
+//运算符重载实现：
+//函数返回类型 类名::operator @(参数表列)
+//{
+  //代码
+//}
+complex  complex::operator+(complex& c) {  //operator+ 是类complex的成员函数
+	complex sum;
+	sum.real = real + c.real;
+	sum.imag = imag + c.imag;
+	return sum;
+}
+void complex::print() {
+	cout << "real=" << real << endl;
+	cout << "imag=" << imag << endl;
+}
+void main() {
+	complex  a(5.0, 6.0), b(4.0, 5.0);
+	complex  c;
+	c = a + b;
+	//c=5+a;
+	c.print();
+}
+*/
+
+
+
+/*
+#include<iostream>
+using namespace std;
+
+class people {
+public:
+	string name;
+	string id;
+public:
+	void fuzhi(string xx, string yy) {
+		name = xx;
+		id = yy;
+	}
+	string putid() {
+		cout << name << endl;
+		cout << id << endl;
+		return id;
+	}
+};
+
+int operator ==(people &p1, people &p2) {
+	if (p1.id == p2.id) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+
+int main() {
+	string name1;
+	string id1;
+	string name2;
+	string id2;
+	int returnout;
+	people p1;
+	cin >> name1 >> id1;
+	cin >> name2 >> id2;
+	cout << "name1:" << name1 << endl;
+	cout << "id1:" << id1 << endl;
+	cout << "name2:" << name2 << endl;
+	cout << "id2:" << id2 << endl;
+	p1.fuzhi(name1,id1);
+	people p2;
+	p2.fuzhi(name2, id2);
+	p1.putid();
+	p2.putid();
+	returnout= p1 == p2;
+	cout << returnout;
+}
+*/
+
+/*
+#include<iostream>
+using namespace std;
+
+class Matrix {
+public:
+	int& operator[](int i);
+	void input();
+	void display();
+private:
+	int mat[5];
+};
+void Matrix::input() {
+	for (int i = 0; i < 4; i++) {
+		cin >> mat[i];
+	}
+		mat[4] = '\0';
+}
+void Matrix::display() {
+	for (int i = 0; i < 4;i++) {
+		cout << mat[i];
+	}
+}
+int main() {
+	Matrix m1;
+	m1.input();
+	m1.display();
+	return 0;
+}
+*/
+
+/*
+#include<iostream>
+using namespace std;
+const int PI=3.1415927;
+
+class Base {
+public:
+	double virtual area()=0;
+};
+
+class Triangle :public Base {
+public:
+	double area();
+private:
+	double a=1;
+	double b=2;
+};
+double Triangle::area() {
+	return a * b;
+}
+
+class Circle :public Base {
+public:
+	double area() {
+		return r * r* PI;
+	}
+private:
+	double r=1;
+};
+
+int main() {
+	Base* b1,*b2;
+	Triangle t1;
+	Circle c1;
+	double coot;
+	b1 = &t1;
+	b2 = &c1;
+	coot = b1->area();
+	cout << coot;
+}
+*/
