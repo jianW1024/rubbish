@@ -1,0 +1,1185 @@
+/*
+#include <iostream>
+using namespace std;
+const float PI = 3.141593;
+const float FENCE_PRICE = 35;
+const float CONCRETE_PRICE = 20;
+
+class Circle {
+public:
+	Circle(float r);
+	float circumference();
+	float area();
+private:
+	float radius;
+};
+Circle::Circle(float r)
+{
+	radius = r;
+}
+
+float Circle::circumference()
+{
+	return 2 * PI * radius;
+}
+
+float Circle::area()
+{
+	return PI * radius * radius;
+}
+
+int main()
+{
+	float radius;
+	cout << "Enter the radius of the pool:";
+	cin >> radius;
+	Circle pool(radius);
+	Circle poolRim(radius + 3);
+
+	float fenceCost = poolRim.circumference() * FENCE_PRICE;
+	cout << "FENCE COST is" << fenceCost << endl;
+
+	float concreteCost = (poolRim.area() - pool.area()) * CONCRETE_PRICE;
+	cout << "CONCRETE COST is" << concreteCost << endl;
+
+	return 0;
+}
+*/
+
+
+
+
+/*
+#include<iostream>
+using namespace std;
+class Point {
+public:
+	Point(int xx = 0, int yy = 0) {
+		x = xx;
+		y = yy;
+	}
+	Point(Point& p);
+	int getX() { return x; }
+	int getY() { return y; }
+private:
+	int x, y;
+};
+
+Point::Point(Point& p) {
+	x = p.x;
+	y = p.y;
+	cout << "Calling the copy constructor"<<endl;
+	cout << x << endl << y;
+}
+
+Point g(){
+	Point a(1, 2);
+	return a;
+}
+int main() {
+	Point b;
+	b = g();
+	return 0;
+}
+*/
+
+
+
+
+/*
+//4-20
+#include<iostream>
+using namespace std;
+class Complex
+{
+public:
+	Complex(float r1, float i1);
+	Complex(float r1);
+	void add(Complex& c);
+	void show();
+private:
+	float r;
+	float i;
+
+
+};
+Complex::Complex(float r1, float i1)
+{
+	r = r1;
+	i = i1;
+}
+
+void Complex::add(Complex& c)
+{
+	r += c.r;
+	i += c.i;
+}
+
+void Complex::show()
+{
+	cout << r << (i > 0 ? '+' : '-') << i << 'i' << endl;
+}
+
+Complex::Complex(float r1)
+{
+	r = r1;
+	i = 0;
+}
+
+int main()
+{
+	Complex c1(3, 5);
+	Complex c2 = 4.5;
+	c1.add(c2);
+	c1.show();
+	return 0;
+}
+*/
+
+
+/*
+//4-13
+#include<iostream>
+using namespace std;
+const float PI = 3.141593;
+
+class Circle {
+public:
+	void getArea();
+private:
+	float radius;
+	float area;
+};
+void Circle::getArea()
+{
+	cin >> radius;
+	area=radius*radius*PI;
+	cout << area;
+}
+int main()
+{
+	Circle c1;
+	c1.getArea();
+}
+*/
+
+
+
+
+/*
+//4-9
+#include<iostream>
+using namespace std;
+
+class Rectangle {
+public:
+	void getArea();
+private:
+	int x1, y1;
+	int x2, y2;
+	int area;
+};
+
+void Rectangle::getArea() {
+	cin>> x1 >> y1>>x2>>y2;
+	area= abs(x1 - x2) * abs(y1 - y2);
+	cout << area;
+}
+int main() {
+	Rectangle R1;
+	R1.getArea();
+	return 0;
+}
+*/
+
+
+
+
+
+/*
+//4-11
+#include<iostream>
+using namespace std;
+
+class Rectangle {
+public:
+	int getArea();
+	void trans(int H, int W);
+private:
+	int length,width;
+};
+
+int Rectangle::getArea() {
+	return length * width;
+}
+
+void Rectangle::trans(int H, int W) {
+	length = H;
+	width = W;
+}
+
+int main()
+{
+	Rectangle R1;
+	int H,W,S;
+	cin >> H >> W;
+	R1.trans(H, W);
+	S=R1.getArea();
+	cout << S;
+	return 0;
+}
+*/
+
+
+
+/*
+//4-8
+#include<iostream>
+using namespace std;
+
+class DOG {
+public:
+	DOG();
+	DOG(int A, int W);
+	void putage();
+	void putweigth();
+private:
+	int age;
+	int weigth;
+};
+
+DOG::DOG()
+{
+	age = 0;
+	weigth = 0;
+}
+
+DOG::DOG(int A,int W)
+{
+	age = A;
+	weigth = W;
+}
+
+void DOG::putage() {
+	cout << age<<endl;
+}
+void DOG::putweigth() {
+	cout << weigth<<endl;
+}
+
+int main() {
+	int A, W;
+	cin >> A >> W;
+	DOG d1;
+	d1=DOG(A, W);
+	d1.putage();
+	d1.putweigth();
+	return 0;
+}
+*/
+
+/*
+//例4-4
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+class Point {
+public:
+	Point(int xx = 0, int yy = 0) {
+		x = xx;
+		y = yy;
+	}
+	Point(Point& p);
+	int getX() { return x;}
+	int getY() { return y; }
+private:
+	int x, y;
+};
+Point::Point(Point& p) {
+	x = p.x;
+	y = p.y;
+	cout << "Calling the copy constructor of Point" << endl;
+	
+}
+
+class Line {
+public:
+	Line(Point xp1, xp2);
+	Line(Line& l);
+	double getLen() { return len; }
+private:
+	Point p1, p2;
+	double len;
+};
+
+Line::Line(Point xp1, Point xp2) :p1(xp1), p2(xp2) {
+	
+}
+*/
+
+/*
+#include<iostream>
+using namespace std;
+
+class Tree {
+public:
+	void grow(int years);
+	void age();
+private:
+	int ages=0;
+};
+void Tree::grow(int years) {
+	ages = ages + years;
+}
+
+void Tree::age() {
+	cout << ages;
+}
+
+int main() {
+	Tree t1;
+	t1.grow(1);
+	t1.age();
+	return 0;
+}
+*/
+
+/*
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Data {
+private:
+	int year;
+	int month;
+	int day;
+public:
+	Data(){}
+	Data(int y, int m, int d) {
+		year = y;
+		month = m;
+		day = d;
+	}
+	void set() {
+		cin >> year >> month >> day;
+	}
+	void display(){
+		cout << year << "/" << month << "/" << day;
+	}
+};
+
+class MEN {
+public:
+	MEN() {};
+	MEN(int n, int y, int m, int d, char id[12],char s='m') {
+		birth=Data(y, m, d);
+		number = n;
+		SEX= s;
+		strcpy(ID,id);
+
+	}
+	void  output() {
+		cout << "编号" << number << endl;
+		cout << "性别" << SEX << endl;
+	}
+	
+	    void  input() {
+		cin >> number>> SEX;
+		cin >> ID;
+		ID[11] = '\0';
+		birth.set();
+		cout << endl;
+	}
+private:
+	char ID[12];
+	int SEX;
+	Data birth;
+	int number;
+	MEN(MEN& m) {
+		number = m.number;
+		SEX = m.SEX;
+		birth = m.birth;
+		strcpy(ID, m.ID);
+	}
+};
+
+int main() {
+	MEN m1;
+	m1.input();
+	m1.output();
+	return 0;
+ }
+ */
+
+ /*
+//double可以为负数
+#include<iostream>
+using namespace std;
+int main()
+{
+	double shiyan = 0;
+	shiyan = shiyan - 1;
+	cout<<shiyan;
+}
+*/
+
+/*
+//int可以为负数
+#include<iostream>
+using namespace std;
+int main()
+{
+	int shiyan = 0;
+	shiyan = shiyan - 1;
+	cout << shiyan;
+}
+*/
+
+/*
+#include<iostream>
+#include"标头.h"
+
+int main()
+{
+	space1::Point a(4, 5);
+	space1::Point b = a;
+	std::cout << b.getX() << endl;
+	space1::fun1(b);
+	b = space1::fun2();
+	std::cout << b.getX() << endl;
+	return 0;
+}*/
+
+/*
+#include<iostream>
+#include<string>
+int main()
+{
+	using namespace std;
+	char charr1[20];
+	char  charr2[20] = "jaguar";
+	string str1;
+	string str2 = "panther";
+
+	cout << "Enter a kind of feline:";
+	cin >> charr1;
+	cout << "Enter another kind of feline:";
+	cin >> str1;
+	cout << "\"Here \"are some felines:\n";
+	cout << charr1 << " " << charr2 << " "
+		<< str1 << " " << str2 << endl;
+	cout << "The third letter in" << charr2 << "is"
+		<< charr2[2] << endl;
+	return 0;
+}
+*/
+/*
+#include<stdio.h>
+void main()
+{
+	int a = 5;
+	int b = 9;
+	int c = a + b;
+	printf_s("%d+%d=%d\n", a, b, c);
+}
+*/
+/*
+#include<stdio.h>
+void main()
+{
+	int a = 3;
+	int b = 6;
+	int c = a + b;
+	printf("%d+%d=%d\n", a, b, c);
+	getchar();
+}
+*/
+/*
+#include<iostream>
+#include"标头1.h";
+
+int main() {
+	Rectangle r1(1,2);
+	r1.getArea();
+	cout << endl;
+	Circle c1(1);
+	c1.getArea();
+	return 0;
+}
+*/
+
+/*
+//7-7
+#include<iostream>
+using namespace std;
+
+class Base {
+public:
+	Base();
+};
+
+Base::Base(){
+	cout << "构造基类对象" << endl;
+}
+
+class Derived :public Base {
+public:
+	Derived();
+};
+
+Derived::Derived() {
+	cout << "构造派生类对象" << endl;
+}
+
+int main() {
+	Derived d;
+}
+*/
+
+/*
+//7-8
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+class Document {
+public:
+	Document() {
+	}
+	Document(char* name);
+	char* Name;
+	void PrintNameOf();
+};
+
+Document::Document(char* name) {
+	Name = new char[strlen(name) + 1];
+	strcpy(Name, name);
+}
+void Document::PrintNameOf() {
+	cout << Name<<endl;
+}
+class Book : public Document
+{
+public:
+	Book(char* name, long pagecount);
+	void PrintNameOf();
+private:
+	long PageCount;
+};
+Book::Book(char* name, long pagecount) :Document(name)
+{
+	PageCount = pagecount;
+}
+void Book::PrintNameOf()
+{
+	cout<< "Name of book: ";
+	Document::PrintNameOf();
+}
+int main()
+{
+	Document a("Document1");
+	Book b("Book1", 100);
+	b.PrintNameOf();
+}
+*/
+
+/*
+//7=10
+#include<iostream>
+using namespace std;
+
+class Object{
+public:
+	Object(float weigth) {
+		this->weigth = weigth;
+		cout << "基类构造函数" << endl;
+	}
+	~Object() {
+		cout << "基类析构函数" << endl;
+	}
+	float getweigth() {
+		return weigth;
+	}
+	int weigth;
+};
+
+class box :public Object {
+public:
+	box(float a,float b,float c) :Object(a){
+		this->heigth = b;
+		this->width = c;
+		cout << "派生类构造函数" << endl;
+	}
+	~box() {
+		cout << "派生类析构函数" << endl;
+	}
+	void ostream() {
+		cout << heigth << endl << width << endl << Object::weigth << endl;
+	}
+private:
+	float heigth;
+	float width;
+};
+
+int main() {
+	box b1(1,2,3);
+	b1.ostream();
+}
+*/
+
+/*
+//实验报告3
+#include <iostream>
+using namespace std;
+class Time {
+public:
+	void set_time(void);
+	void show_time(void);
+private:
+	int hour;
+	int minute;
+	int sec;
+};
+Time t;
+void Time::set_time(void) {  //在main函数之前定义
+	cin >> t.hour;
+	cin >> t.minute;
+	cin >> t.sec;
+}
+void Time::show_time(void) {  //在main函数之前定义
+	cout << t.hour << ":" << t.minute << ":" << t.sec << endl;
+}
+int main() {
+	t.set_time();
+	t.show_time();
+	return 0;
+}
+*/
+
+/*
+//1
+#include <iostream>
+using namespace std;
+class Point {
+public:
+	Point(int xx = 0, int yy = 0) { X = xx; Y = yy; cout << "构造函数被调用" << endl; }
+	Point(Point& p);
+	~Point();
+	int GetX() { return X; }
+	int GetY() { return Y; }
+private:
+	int  X, Y;
+};
+Point::Point(Point& p) {
+	X = p.X;
+	Y = p.Y;
+	cout << "拷贝构造函数被调用" << endl;
+}
+Point::~Point() { cout << "析构函数被调用" << endl; }
+
+void fun1(Point p) { cout << p.GetX() << endl; }
+Point fun2() {
+	Point A(1, 2);
+	return A; //调用拷贝构造函数 生成临时对象
+}
+void main() {
+	Point A(1, 2);//构造函数被调用
+	Point B(A); //拷贝构造函数被调用
+	Point C = A;
+	fun1(A); //调用拷贝构造函数
+	B = fun2();
+	cout << B.GetX() << endl;
+}
+*/
+/*
+#include<iostream>
+using namespace std;
+
+class Block {
+public:
+	Block(int xx=0, int yy=0, int zz=0) {
+		length = xx;
+		width = yy;
+		height = zz;
+	}
+	Block(Block& b) {
+		length = b.length;
+		width = b.width;
+		height = b.height;
+	}
+	~Block() {
+		cout << "对象已释放"<<endl;
+	}
+	void input(int xx, int yy, int zz) {
+		cin >> xx >> yy >> zz;
+		this->length = xx;
+		this->width = yy;
+		this->height = zz;
+	}
+	void volume();
+	void output();
+private:
+	int length;
+	int width;
+	int height;
+	int v=0;
+};
+void Block::volume() {
+	v = length * width * width;
+}
+void Block::output() {
+	cout << v << endl;
+}
+int main()
+{
+	
+	Block A(1, 2, 3);
+	Block B;
+	Block C = A;
+	B.input(int xx,int yy,int zz);
+	A.volume();
+	B.volume();
+	A.output();
+	B.output();
+	return 0;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+class Point {//定义Point 类
+public:
+	Point();
+	Point(int xx, int yy);
+	~Point();
+	void Move(int x, int y);
+	int GetX() { return X; }
+	int GetY() { return Y; }
+private:
+	int  X, Y;
+};
+Point::Point() {
+	X = Y = 0;
+	cout << "Default Constructor called." << endl;
+}
+Point::Point(int xx, int yy) {
+	X = xx;
+	Y = yy;
+	cout << "Constructor called." << endl;
+}
+
+Point ::~Point() { cout << "Destructor called." << endl; }
+void Point::Move(int x, int y) {
+	cout << "moving the point to(" << x << "," << y << ")" << endl;
+	X = x;
+	Y = y;
+}
+int main() {
+	int i;
+	cout << "Entering main..." << endl;
+	Point A[2];  //定义Point类型的对象数组
+	for (i = 0; i < 2; i++) A[i].Move(i + 10, i + 20);//通过下标使用对象数组元素
+	cout << "print A..." << endl;
+	Point B[2] = { Point(),Point(1,2) };  //定义时初始化（注意无参对象的写法）
+	for (i = 0; i < 2; i++)   B[i].Move(i + 10, i + 20);
+	cout << "Exiting main..." << endl;
+	return 0;
+}
+*/
+/*
+#include <conio.h>
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+#define  M  5
+void  PrintData(double sum);
+void  ReadData(double tt[M]);
+double Acc(int k, double dd[]) {//实现计算数组元素的小数部分之和
+	int quzheng;
+	double sum;
+	for (int i = 0; i < M; i++) {
+		quzheng = dd[i];
+		sum = sum + dd[i] - quzheng;
+	}
+	return sum;
+  //写入你的代码
+}
+void main() {
+	int m;
+	double sm;
+	double  tt[M];
+	system("cls");//清除屏幕数据
+	ReadData(tt);  //读取数据
+	//此处添加求小数部分之和的函数调用语句
+	sm = Acc(m, tt);
+	PrintData(sm);  //结果显示在屏幕上
+}
+void PrintData(double sum) {  //把sum数据输出到屏幕上
+	cout << "求和结果为："<<sum << endl;
+  //写入你的代码
+}
+void  ReadData(double tt[M]) {  //从键盘中输入5个double数据存于tt数据中
+	for (int i = 0; i < M; i++) {
+		cin >> tt[i];
+	}
+  //写入你的代码
+}
+*/
+/*
+#include <iostream>
+using namespace std;
+class Point {//定义Point 类
+public:
+	Point();
+	Point(int xx, int yy);
+	~Point();
+	void Move(int x, int y);
+	int GetX() { return X; }
+	int GetY() { return Y; }
+private:
+	int  X, Y;
+};
+Point::Point() {
+	X = Y = 0;
+	cout << "Default Constructor called." << endl;
+}
+Point::Point(int xx, int yy) {
+	X = xx;
+	Y = yy;
+	cout << "Constructor called." << endl;
+}
+
+Point ::~Point() { cout << "Destructor called." << endl; }
+void Point::Move(int x, int y) {
+	cout << "moving the point to(" << x << "," << y << ")" << endl;
+	X = x;
+	Y = y;
+}
+int main() {
+	int i;
+	cout << "Entering main..." << endl;
+	Point A[2];  //定义Point类型的对象数组
+	for (i = 0; i < 2; i++) A[i].Move(i + 10, i + 20);//通过下标使用对象数组元素
+	cout << "print A..." << endl;
+	Point B[2] = { Point(),Point(1,2) };  //定义时初始化（注意无参对象的写法）
+	for (i = 0; i < 2; i++)   B[i].Move(i + 10, i + 20);
+	cout << "Exiting main..." << endl;
+	return 0;
+}
+*/
+/*
+#include<iostream>
+using namespace std;
+class Point {
+public:
+	Point() { X = Y = 0;  cout << "Default Constructor called.\n"; }
+	Point(int xx, int yy) { X = xx;  Y = yy;  cout << "Constructor called.\n"; }
+	~Point() { cout << "Destructor called.\n"; }
+	int GetX() { return X; }
+	int GetY() { return Y; }
+	void  Move(int x, int y) { X = x;  Y = y; }
+private:
+	int  X, Y;
+};
+int main() {
+	cout << "Step One:" << endl;
+	Point* Ptr1 = new Point();//new 类名：调用无参构造函数
+	delete  Ptr1;
+	cout << "Step Two:" << endl;
+	Ptr1 = new Point(1, 2);//new 类名(实参)：调用有参构造函数
+	cout << Ptr1->GetX() << endl;   //通过指针访问公有成员
+	delete Ptr1;
+	return 0;
+}
+*/
+/*
+#include<iostream>
+using namespace std;
+
+class Crectangle {
+public:
+	Crectangle(int xx = 0, int yy = 0) {
+		length = xx;
+		width = yy;
+	}
+	~Crectangle() { cout << "析构函数" << endl; }
+	void setvalue(int x, int y) {
+		length = x;
+		width = y;
+	}
+	float area() {
+		area1 = length * width;
+		return area1;
+	}
+private:
+	int length;
+	int width;
+	float area1;
+};
+
+int main()
+{
+	cout << "Step1:" << endl;
+	Crectangle* prt1 = new Crectangle();
+	//cout<<prt1->area()<<endl;
+	delete prt1;
+	cout << "Step2:" << endl;
+	prt1 = new Crectangle(1, 2);
+	cout<<prt1->area()<<endl;
+	delete prt1;
+	return 0;
+}
+*/
+/*
+#include <conio.h>
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+#define  M  5
+void  PrintData(double sum);
+void  ReadData(double tt[M]);
+double Acc(int k, double dd[]) {//实现计算数组元素的小数部分之和
+	int quzheng;
+	double sum;
+	for (int i = 0; i < M; i++) {
+		quzheng = dd[i];
+		sum = sum + dd[i] - quzheng;
+	}
+	return sum;
+	//写入你的代码
+}
+void main() {
+	int m;
+	double sm;
+	double  tt[M];
+	system("cls");//清除屏幕数据
+	ReadData(tt);  //读取数据
+	//此处添加求小数部分之和的函数调用语句
+	sm = Acc(m, tt);
+	PrintData(sm);  //结果显示在屏幕上
+}
+void PrintData(double sum) {  //把sum数据输出到屏幕上
+	cout << "求和结果为：" << sum << endl;
+	//写入你的代码
+}
+void  ReadData(double tt[M]) {  //从键盘中输入5个double数据存于tt数据中
+	int zz;
+	for (int i = 0; i < M; i++) {
+		cin>>tt[i];
+	}
+	//写入你的代码
+}
+*/
+/*
+#include <iostream>
+using namespace std;
+class Time {
+private:
+	int hour;
+	int minute;
+	int sec;
+public:
+	void showhour() {
+		cout << hour << ":";
+	}
+	void showmin() {
+		cout << minute << ":";
+	}
+	void showsec() {
+		cout << sec << endl;
+	}
+	void setTime(int hour, int minute, int sec) {
+		this->hour = hour;
+		this->minute = minute;
+		this->sec = sec;
+	}
+};
+int main() {
+	Time t1;
+	Time& t2 = t1;
+	int hour, minute, sec;
+	cin >> hour >> minute >> sec;
+	t2.setTime(hour, minute, sec);
+	t1.setTime(hour, minute, sec);
+
+	t1.showhour();
+	t1.showmin();
+	t2.showsec();
+
+	return 0;
+}
+*/
+
+/*
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+using namespace std;
+#define  M  5
+void  PrintData(double sum);
+
+void  ReadData(double tt[M]);
+
+double Acc(int k, double dd[]) {//实现计算数组元素的小数部分之和
+  //写入你的代码
+	double result = 0;
+	for (int i = 0; i < k; i++)
+	{
+		dd[i] = dd[i] - static_cast<int> (dd[i]);
+		result += dd[i];
+	}
+	return result;
+}
+void main() {
+	int m;
+	double sm;
+	double  tt[M];
+	system("cls");//清除屏幕数据
+	ReadData(tt);  //读取数据
+	sm = Acc(M, tt);
+	//此处添加求小数部分之和的函数调用语句
+	PrintData(sm);  //结果显示在屏幕上
+	system("pause");
+}
+void PrintData(double sum) {  //把sum数据输出到屏幕上
+  //写入你的代码
+	cout << sum;
+}
+
+void  ReadData(double tt[M])
+{
+	for (int i = 0; i < M; i++)
+	{
+		cin >> tt[i];
+	}
+}
+*/
+/*
+#include<iostream>
+#include<cstring>
+
+using namespace std;
+
+void trans(char* abd) {
+	for (int i = 183; i >=0; i--) {
+		cout << abd[i];
+	}
+}
+
+int main() {
+	char abd[184] = "hciebdyfjskxohcsnoxhnzudjxnydlsocuxhdnydtcxbdidoknsyxyfvpzjbsuakrbudbcockzbeufhaoehdbhxizbdudjzgsiapnbducbvspquwydthcnzozjxGmznauuzstbwoaoajevrufhsctdtffttfftcfhddudufebgllbtscyvtxsms";
+	trans(abd);
+	return 0;
+}
+*/
+
+
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+class Student {
+public:
+	void get_value() {  //添加代码 实现  num，name和sex的输入
+		cin >> num >> name >> sex;
+	}
+	void display() {
+		cout << "num: " << num << endl;
+		cout << "name: " << name << endl;
+		cout << "sex: " << sex << endl;
+	}
+private:
+	int num;
+	string name;
+	char sex;
+};
+class Student1 :public Student   //增加公有继承
+{
+public:
+	void get_value_1() {
+		//添加代码。实现基类继承的成员的输入以及本类新增的数据成员的输入
+		get_value();
+		cin >> age >> addr;
+	}
+	void display_1() {
+		//添加代码。实现基类继承成员和新增age，addr的输出
+		display();
+		cout << "age:" << age << endl;
+		cout << "addr:" << addr << endl;
+	}
+private:
+	int age;
+	string addr;
+};
+void main() {
+	Student1 stud1;
+	stud1.get_value();
+	stud1.get_value_1();
+	stud1.display();
+	stud1.display_1();
+}
+*/
+
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+class Student {
+public:
+	void get_value()
+	{
+		int anum;
+		string aname;
+		char asex;
+		cin >> anum >> aname >> asex;
+		num = anum;
+		name = aname;
+		sex = asex;
+	}
+
+	void display() {
+		cout << "num: " << num << endl;
+		cout << "name: " << name << endl;
+		cout << "sex: " << sex << endl;
+	}
+private:
+	int num;
+	string name;
+	char sex;
+};
+
+class Student1 :public Student//增加公有继承
+{
+public:
+	void get_value_1() {
+		//添加代码。实现基类继承的成员的输入以及本类新增的数据成员的输入
+		int aage;
+		string aaddr;
+		cin >> aage >> aaddr;
+		age = aage;
+		addr = aaddr;
+	}
+	void display_1() {
+		//添加代码。实现基类继承成员和新增age，addr的输出
+		cout << "age: " << age << endl;
+		cout << "addr: " << addr << endl;
+	}
+private:
+	int age;
+	string addr;
+};
+void main() {
+	Student1 stud1;
+	stud1.get_value();
+	stud1.get_value_1();
+	stud1.display();
+	stud1.display_1();
+	system("pause");
+}
+*/
